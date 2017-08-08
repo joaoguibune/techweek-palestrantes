@@ -1,0 +1,26 @@
+
+  <div class="row">
+  <div class="input-field col s3">
+    <input id="last_name" type="text" [(ngModel)]="palestrante.nome" class="validate">
+    <label for="last_name">Nome</label>
+  </div>
+  <div class="input-field col s3">
+    <input id="last_name" type="text" [(ngModel)]="palestrante.palestra" class="validate">
+    <label for="last_name">Palestra</label>
+  </div>
+  <div class="input-field col s3">
+    <input id="last_name" type="text" [(ngModel)]="palestrante.imagem" class="validate">
+    <label for="last_name">Imagem</label>
+  </div>
+   <a class="btn-floating btn-large waves-effect waves-light" (click)="addPalestra(palestrante)"><i>+</i></a>
+</div>
+
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let p of palestrantes; let i=index">
+    <img src="../../assets/images/palestrantes/{{ p.imagem }}" alt="" class="circle">
+    <span class="title">{{ p.palestra }}</span>
+    <p>{{ p.nome }} <a class="waves-effect waves-light btn right red" (click)="removePalestra(i)">Remover</a></p> 
+  </li>
+</ul>
+
+
